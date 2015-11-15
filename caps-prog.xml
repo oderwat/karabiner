@@ -11,7 +11,7 @@
     </autogen>
 
     <!--autogen>
-        --KeyToKey--
+        __KeyToKey__
         KeyCode::JIS_YEN,
         KeyCode::COMMAND_R,
         ModifierFlag::COMMAND_L
@@ -19,95 +19,95 @@
 
     <!-- CL + Shift + [ = Ü -->
     <autogen>
-      --KeyToKey-- KeyCode::BRACKET_LEFT, ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::U, ModifierFlag::OPTION_R | ModifierFlag::SHIFT_L
+      __KeyToKey__ KeyCode::BRACKET_LEFT, ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::U, ModifierFlag::OPTION_R | ModifierFlag::SHIFT_L
     </autogen>
 
     <autogen>
-      --KeyToKey-- KeyCode::BRACKET_LEFT, ModifierFlag::SHIFT_R | ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::U, ModifierFlag::OPTION_R | ModifierFlag::SHIFT_R
+      __KeyToKey__ KeyCode::BRACKET_LEFT, ModifierFlag::SHIFT_R | ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::U, ModifierFlag::OPTION_R | ModifierFlag::SHIFT_R
     </autogen>
 
     <!-- CL + Shift + ] = * -->
     <autogen>
-      --KeyToKey-- KeyCode::BRACKET_RIGHT, ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::KEY_8, ModifierFlag::SHIFT_L
+      __KeyToKey__ KeyCode::BRACKET_RIGHT, ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::KEY_8, ModifierFlag::SHIFT_L
     </autogen>
 
     <autogen>
-      --KeyToKey-- KeyCode::BRACKET_RIGHT, ModifierFlag::SHIFT_R | ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::KEY_8, ModifierFlag::SHIFT_R
+      __KeyToKey__ KeyCode::BRACKET_RIGHT, ModifierFlag::SHIFT_R | ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::KEY_8, ModifierFlag::SHIFT_R
     </autogen>
 
     <!-- CL + [ = ü -->
     <autogen>
-      --KeyToKey-- KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::U, ModifierFlag::OPTION_R
+      __KeyToKey__ KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::U, ModifierFlag::OPTION_R
     </autogen>
 
     <!-- CL + ] = * -->
     <autogen>
-      --KeyToKey-- KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::EQUAL, ModifierFlag::SHIFT_L
+      __KeyToKey__ KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::EQUAL, ModifierFlag::SHIFT_L
     </autogen>
 
     <!-- CL + Shift L + ; = ä -->
     <autogen>
-      --KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::A, ModifierFlag::OPTION_R | ModifierFlag::SHIFT_L
+      __KeyToKey__ KeyCode::SEMICOLON, ModifierFlag::SHIFT_L | ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::A, ModifierFlag::OPTION_R | ModifierFlag::SHIFT_L
     </autogen>
 
     <!-- CL + Shift R + ; = ä -->
     <autogen>
-      --KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::SHIFT_R | ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::A, ModifierFlag::OPTION_R | ModifierFlag::SHIFT_R
+      __KeyToKey__ KeyCode::SEMICOLON, ModifierFlag::SHIFT_R | ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::A, ModifierFlag::OPTION_R | ModifierFlag::SHIFT_R
     </autogen>
 
     <!-- CL + ; = ä -->
     <autogen>
-      --KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::A, ModifierFlag::OPTION_R
+      __KeyToKey__ KeyCode::SEMICOLON, ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::A, ModifierFlag::OPTION_R
     </autogen>
 
     <!-- CL + ] = * -->
     <autogen>
-      --KeyToKey-- KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::EQUAL, ModifierFlag::SHIFT_L
+      __KeyToKey__ KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::EQUAL, ModifierFlag::SHIFT_L
     </autogen>
 
     <!-- CL + NumKey * blendet das Nachrichtenzentrum ein. Transliert zu ALT + CTRL + CMD + * -->
     <autogen>
-      --KeyToKey-- KeyCode::KEYPAD_MULTIPLY, ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::KEYPAD_MULTIPLY, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
+      __KeyToKey__ KeyCode::KEYPAD_MULTIPLY, ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::KEYPAD_MULTIPLY, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
     </autogen>
 
     <!-- CL und Cursor rechts/links soll Spaces wechseln
         Im Systempreferences Spaces dann mit CMD + ALT + CTRL links/rechts wechseln -->
     <autogen>
-      --KeyToKey-- KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
+      __KeyToKey__ KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
     </autogen>
 
     <autogen>
-      --KeyToKey-- KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
+      __KeyToKey__ KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
     </autogen>
 
     <!-- Die nächsten drei machen, dass CL TAB und CL SHIFT TAB ebenfalls zwischen Spaces wechselt -->
     <autogen>
-      --KeyToKey-- KeyCode::TAB, ModifierFlag::COMMAND_R | ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
+      __KeyToKey__ KeyCode::TAB, ModifierFlag::COMMAND_R | ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
     </autogen>
 
     <autogen>
-      --KeyToKey-- KeyCode::TAB, ModifierFlag::COMMAND_R | ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_R, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
+      __KeyToKey__ KeyCode::TAB, ModifierFlag::COMMAND_R | ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_R, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
     </autogen>
 
     <autogen>
-      --KeyToKey-- KeyCode::TAB, ModifierFlag::COMMAND_R | ModifierFlag::COMMAND_L, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
+      __KeyToKey__ KeyCode::TAB, ModifierFlag::COMMAND_R | ModifierFlag::COMMAND_L, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
     </autogen>
 
     <!-- Hier nun Mappings für Exposee und Programfenster -->
     <autogen>
-      --KeyToKey-- KeyCode::CURSOR_UP, ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::CURSOR_UP, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
+      __KeyToKey__ KeyCode::CURSOR_UP, ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::CURSOR_UP, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
     </autogen>
 
     <autogen>
-      --KeyToKey-- KeyCode::CURSOR_DOWN, ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::CURSOR_DOWN, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
+      __KeyToKey__ KeyCode::CURSOR_DOWN, ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::CURSOR_DOWN, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
     </autogen>
 
     <autogen>
-      --KeyToKey-- KeyCode::KEY_1, ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::KEY_1, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
+      __KeyToKey__ KeyCode::KEY_1, ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::KEY_1, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
     </autogen>
 
     <autogen>
-      --KeyToKey-- KeyCode::KEY_2, ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::KEY_2, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
+      __KeyToKey__ KeyCode::KEY_2, ModifierFlag::COMMAND_L | ModifierFlag::COMMAND_R, KeyCode::KEY_2, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L,
     </autogen>
 
   </item>

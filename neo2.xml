@@ -12,6 +12,7 @@
     <modifierdef>NEO2_EBENE5</modifierdef>
     <modifierdef>NEO2_EBENE6</modifierdef>
 
+    <!-- Ein-/Ausschalten von NEO 2 mit doppeltippen von CapsLock -->
     <autogen>
       --DoublePressModifier-- KeyCode::JIS_YEN, KeyCode::VK_MODIFIER_NEO2_EBENE3, KeyCode::VK_CONFIG_TOGGLE_notsave_oderwat_neo2_off
     </autogen>
@@ -22,20 +23,25 @@
 
     <block>
       <config_only>notsave.oderwat.neo2_off</config_only>
-      <!--autogen>nur komplizierter
-                --KeyToKey--
-                KeyCode::SHIFT_L,
-                KeyCode::VK_MODIFIER_NEO2_EBENE2
+
+      <!-- Ebene 1 kommt am ende! -->
+
+      <!--autogen>Echte Ebene 2 wäre nur komplizierter
+        __KeyToKey__
+        KeyCode::SHIFT_L,
+        KeyCode::VK_MODIFIER_NEO2_EBENE2
       </autogen-->
 
       <!-- Yen (CapsLock) wird Ebene 3 Modifier -->
       <autogen>
-        --KeyToKey-- KeyCode::JIS_YEN, ModifierFlag::NONE, KeyCode::VK_MODIFIER_NEO2_EBENE3
+        __KeyToKey__ KeyCode::JIS_YEN, ModifierFlag::NONE,
+        KeyCode::VK_MODIFIER_NEO2_EBENE3
       </autogen>
 
       <!-- # wird auch Ebene 3 Modifier -->
       <autogen>
-        --KeyToKey-- KeyCode::BACKSLASH, ModifierFlag::NONE, KeyCode::VK_MODIFIER_NEO2_EBENE3
+        __KeyToKey__ KeyCode::BACKSLASH, ModifierFlag::NONE,
+        KeyCode::VK_MODIFIER_NEO2_EBENE3
       </autogen>
 
       <!-- SPACE halten als Ebene 4 Modifier Key! Doppel-SPACE für SPACE Tasten-Repeat -->
@@ -47,36 +53,59 @@
       </block>
 
       <autogen>
-        __KeyOverlaidModifier__ KeyCode::SPACE, ModifierFlag::NONE, Option::KEYTOKEY_DELAYED_ACTION, KeyCode::VK_MODIFIER_NEO2_EBENE4, Option::KEYTOKEY_DELAYED_ACTION_CANCELED_BY, KeyCode::SPACE, KeyCode::VK_STICKY_EXTRA1_FORCE_ON,
+        __KeyOverlaidModifier__ KeyCode::SPACE, ModifierFlag::NONE,
+        Option::KEYTOKEY_DELAYED_ACTION, KeyCode::VK_MODIFIER_NEO2_EBENE4, Option::KEYTOKEY_DELAYED_ACTION_CANCELED_BY, KeyCode::SPACE,
+        KeyCode::VK_STICKY_EXTRA1_FORCE_ON
       </autogen>
 
       <!-- Ebene 4 Modifier Links ist < (links von Z) -->
       <autogen>
-        --KeyToKey-- KeyCode::BACKQUOTE, KeyCode::VK_MODIFIER_NEO2_EBENE4
+        __KeyToKey__ KeyCode::BACKQUOTE,
+        KeyCode::VK_MODIFIER_NEO2_EBENE4
       </autogen>
 
       <!-- # + Shift wird Ebene 5 Modifier -->
       <autogen>
-        --KeyToKey-- KeyCode::BACKSLASH, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, ModifierFlag::NONE, KeyCode::VK_MODIFIER_NEO2_EBENE5
+        __KeyToKey__ KeyCode::BACKSLASH, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, ModifierFlag::NONE,
+        KeyCode::VK_MODIFIER_NEO2_EBENE5
       </autogen>
 
       <!-- Yen (CapsLock) + Shift wird Ebene 5 Modifier -->
       <autogen>
-        --KeyToKey-- KeyCode::JIS_YEN, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, ModifierFlag::NONE, KeyCode::VK_MODIFIER_NEO2_EBENE5
+        __KeyToKey__ KeyCode::JIS_YEN, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, ModifierFlag::NONE,
+        KeyCode::VK_MODIFIER_NEO2_EBENE5
       </autogen>
 
       <!-- Yen (Capslock) + Ebene 4 Modifier (SPACE oder <) wird Ebene 6 Modifier -->
       <autogen>
-        --KeyToKey-- KeyCode::JIS_YEN, ModifierFlag::NEO2_EBENE4, ModifierFlag::NONE, KeyCode::VK_MODIFIER_NEO2_EBENE6
+        __KeyToKey__ KeyCode::JIS_YEN, ModifierFlag::NEO2_EBENE4, ModifierFlag::NONE,
+        KeyCode::VK_MODIFIER_NEO2_EBENE6
       </autogen>
 
       <!-- # + Ebene 4 Modifier (SPACE oder <) wird Ebene 6 Modifier -->
       <autogen>
-        --KeyToKey-- KeyCode::BACKSLASH, ModifierFlag::NEO2_EBENE4, ModifierFlag::NONE, KeyCode::VK_MODIFIER_NEO2_EBENE6
+        __KeyToKey__ KeyCode::BACKSLASH, ModifierFlag::NEO2_EBENE4, ModifierFlag::NONE,
+        KeyCode::VK_MODIFIER_NEO2_EBENE6
       </autogen>
 
       <autogen>
-        --KeyToKey-- KeyCode::BACKQUOTE, ModifierFlag::NEO2_EBENE3, ModifierFlag::NONE, KeyCode::VK_MODIFIER_NEO2_EBENE6
+        __KeyToKey__ KeyCode::BACKQUOTE, ModifierFlag::NEO2_EBENE3, ModifierFlag::NONE,
+        KeyCode::VK_MODIFIER_NEO2_EBENE6
+      </autogen>
+
+      <!-- Hier ein paar allgemeine Verbesserungen bei der NEO 2 Nutzung -->
+      <!-- Doppeltap Shift (links oder rechts) zu CapsLock -->
+      <autogen>
+        __DoublePressModifier__
+        KeyCode::SHIFT_L,
+        KeyCode::SHIFT_L,
+        KeyCode::CAPSLOCK
+      </autogen>
+      <autogen>
+        __DoublePressModifier__
+        KeyCode::SHIFT_R,
+        KeyCode::SHIFT_R,
+        KeyCode::CAPSLOCK
       </autogen>
 
       <!-- Ebene 3 -->
@@ -86,143 +115,153 @@
       <!-- Ebene 3 - Top Row -->
 
       <autogen>
-        --KeyToKey-- KeyCode::Q, ModifierFlag::NEO2_EBENE3, KeyCode::DOT, ModifierFlag::OPTION_R
+        __KeyToKey__ KeyCode::Q, ModifierFlag::NEO2_EBENE3,
+        KeyCode::DOT, ModifierFlag::OPTION_R
       </autogen>
       <autogen>
-        --KeyToKey-- KeyCode::W, ModifierFlag::NEO2_EBENE3, KeyCode::SLASH, ModifierFlag::SHIFT_R
+        __KeyToKey__ KeyCode::W, ModifierFlag::NEO2_EBENE3,
+        KeyCode::SLASH, ModifierFlag::SHIFT_R
       </autogen>
       <autogen>
-        --KeyToKey-- KeyCode::E, ModifierFlag::NEO2_EBENE3, KeyCode::KEY_5, ModifierFlag::OPTION_R
+        __KeyToKey__ KeyCode::E, ModifierFlag::NEO2_EBENE3,
+        KeyCode::KEY_5, ModifierFlag::OPTION_R
       </autogen>
       <autogen>
-        --KeyToKey-- KeyCode::R, ModifierFlag::NEO2_EBENE3, KeyCode::KEY_6, ModifierFlag::OPTION_R
+        __KeyToKey__ KeyCode::R, ModifierFlag::NEO2_EBENE3,
+        KeyCode::KEY_6, ModifierFlag::OPTION_R
       </autogen>
       <autogen>
-        --KeyToKey-- KeyCode::T, ModifierFlag::NEO2_EBENE3, KeyCode::KEY_6, ModifierFlag::SHIFT_R | ModifierFlag::OPTION_R | ModifierFlag::CONTROL_R
+        __KeyToKey__ KeyCode::T, ModifierFlag::NEO2_EBENE3,
+        KeyCode::KEY_6, ModifierFlag::SHIFT_R | ModifierFlag::OPTION_R | ModifierFlag::CONTROL_R
       </autogen>
       <autogen>
-        --KeyToKey-- KeyCode::Y, ModifierFlag::NEO2_EBENE3, KeyCode::KEY_1, ModifierFlag::SHIFT_R
+        __KeyToKey__ KeyCode::Y, ModifierFlag::NEO2_EBENE3,
+        KeyCode::KEY_1, ModifierFlag::SHIFT_R
       </autogen>
       <autogen>
-        --KeyToKey-- KeyCode::U, ModifierFlag::NEO2_EBENE3, KeyCode::BACKQUOTE
+        __KeyToKey__ KeyCode::U, ModifierFlag::NEO2_EBENE3,
+        KeyCode::BACKQUOTE
       </autogen>
       <autogen>
-        --KeyToKey-- KeyCode::I, ModifierFlag::NEO2_EBENE3, KeyCode::BACKQUOTE, ModifierFlag::SHIFT_R
+        __KeyToKey__ KeyCode::I, ModifierFlag::NEO2_EBENE3,
+        KeyCode::BACKQUOTE, ModifierFlag::SHIFT_R
       </autogen>
       <autogen>
-        --KeyToKey-- KeyCode::O, ModifierFlag::NEO2_EBENE3, KeyCode::KEY_0, ModifierFlag::SHIFT_R
+        __KeyToKey__ KeyCode::O, ModifierFlag::NEO2_EBENE3,
+        KeyCode::KEY_0, ModifierFlag::SHIFT_R
       </autogen>
       <autogen>
-        --KeyToKey-- KeyCode::P, ModifierFlag::NEO2_EBENE3, KeyCode::KEY_6, ModifierFlag::SHIFT_R
+        __KeyToKey__ KeyCode::P, ModifierFlag::NEO2_EBENE3,
+        KeyCode::KEY_6, ModifierFlag::SHIFT_R
       </autogen>
       <autogen>
         <!-- gibt es nicht ? -->
-        --KeyToKey-- KeyCode::BRACKET_LEFT, ModifierFlag::NEO2_EBENE3, KeyCode::SPACE
+        __KeyToKey__ KeyCode::BRACKET_LEFT, ModifierFlag::NEO2_EBENE3,
+        KeyCode::SPACE
       </autogen>
       <autogen>
         <!-- gibt es nicht ? -->
-        --KeyToKey-- KeyCode::BRACKET_RIGHT, ModifierFlag::NEO2_EBENE3, KeyCode::SPACE
+        __KeyToKey__ KeyCode::BRACKET_RIGHT, ModifierFlag::NEO2_EBENE3,
+        KeyCode::SPACE
       </autogen>
 
       <!-- Ebene 3 - Home Row -->
-
-      <!-- \ -->
-      <autogen>
-        --KeyToKey-- KeyCode::A, ModifierFlag::NEO2_EBENE3, KeyCode::KEY_7, ModifierFlag::OPTION_R | ModifierFlag::SHIFT_R
+      <autogen> <!-- \ -->
+        __KeyToKey__ KeyCode::A, ModifierFlag::NEO2_EBENE3,
+        KeyCode::KEY_7, ModifierFlag::OPTION_R | ModifierFlag::SHIFT_R
       </autogen>
-
-      <!-- / -->
-      <autogen>
-        --KeyToKey-- KeyCode::S, ModifierFlag::NEO2_EBENE3, KeyCode::KEY_7, ModifierFlag::SHIFT_R
+      <autogen> <!-- / -->
+        __KeyToKey__ KeyCode::S, ModifierFlag::NEO2_EBENE3,
+        KeyCode::KEY_7, ModifierFlag::SHIFT_R
       </autogen>
-
-      <!-- { -->
-      <autogen>
-        --KeyToKey-- KeyCode::D, ModifierFlag::NEO2_EBENE3, KeyCode::KEY_8, ModifierFlag::OPTION_R
+      <autogen> <!-- { -->
+        __KeyToKey__ KeyCode::D, ModifierFlag::NEO2_EBENE3,
+        KeyCode::KEY_8, ModifierFlag::OPTION_R
       </autogen>
-
-      <!-- } -->
-      <autogen>
-        --KeyToKey-- KeyCode::F, ModifierFlag::NEO2_EBENE3, KeyCode::KEY_9, ModifierFlag::OPTION_R
+      <autogen> <!-- } -->
+        __KeyToKey__ KeyCode::F, ModifierFlag::NEO2_EBENE3,
+        KeyCode::KEY_9, ModifierFlag::OPTION_R
       </autogen>
-
-      <!-- * -->
-      <autogen>
-        --KeyToKey-- KeyCode::G, ModifierFlag::NEO2_EBENE3, KeyCode::BRACKET_RIGHT, ModifierFlag::SHIFT_R
+      <autogen> <!-- * -->
+        __KeyToKey__ KeyCode::G, ModifierFlag::NEO2_EBENE3,
+        KeyCode::BRACKET_RIGHT, ModifierFlag::SHIFT_R
       </autogen>
-
-      <!-- ? -->
-      <autogen>
-        --KeyToKey-- KeyCode::H, ModifierFlag::NEO2_EBENE3, KeyCode::MINUS, ModifierFlag::SHIFT_R
+      <autogen> <!-- ? -->
+        __KeyToKey__ KeyCode::H, ModifierFlag::NEO2_EBENE3, KeyCode::MINUS, ModifierFlag::SHIFT_R
       </autogen>
-
-      <!-- ( -->
-      <autogen>
-        --KeyToKey-- KeyCode::J, ModifierFlag::NEO2_EBENE3, KeyCode::KEY_8, ModifierFlag::SHIFT_R
+      <autogen> <!-- ( -->
+        __KeyToKey__ KeyCode::J, ModifierFlag::NEO2_EBENE3, KeyCode::KEY_8, ModifierFlag::SHIFT_R
       </autogen>
-
-      <!-- ) -->
-      <autogen>
-        --KeyToKey-- KeyCode::K, ModifierFlag::NEO2_EBENE3, KeyCode::KEY_9, ModifierFlag::SHIFT_R
+      <autogen> <!-- ) -->
+        __KeyToKey__ KeyCode::K, ModifierFlag::NEO2_EBENE3, KeyCode::KEY_9, ModifierFlag::SHIFT_R
       </autogen>
-
-      <!-- - -->
-      <autogen>
-        --KeyToKey-- KeyCode::L, ModifierFlag::NEO2_EBENE3, KeyCode::SLASH
+      <autogen> <!-- - -->
+        __KeyToKey__ KeyCode::L, ModifierFlag::NEO2_EBENE3, KeyCode::SLASH
       </autogen>
-
-      <!-- : -->
-      <autogen>
-        --KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::NEO2_EBENE3, KeyCode::DOT, ModifierFlag::SHIFT_R
+      <autogen> <!-- : -->
+        __KeyToKey__ KeyCode::SEMICOLON, ModifierFlag::NEO2_EBENE3,
+        KeyCode::DOT, ModifierFlag::SHIFT_R
       </autogen>
-
-      <!-- @ -->
-      <autogen>
-        --KeyToKey-- KeyCode::QUOTE, ModifierFlag::NEO2_EBENE3, KeyCode::L, ModifierFlag::OPTION_R
+      <autogen> <!-- @ -->
+        __KeyToKey__ KeyCode::QUOTE, ModifierFlag::NEO2_EBENE3,
+        KeyCode::L, ModifierFlag::OPTION_R
       </autogen>
 
       <!-- Ebene 3 - Bottom Row -->
       <autogen>
-        --KeyToKey-- KeyCode::Z, ModifierFlag::NEO2_EBENE3, KeyCode::BACKSLASH
+        __KeyToKey__ KeyCode::Z, ModifierFlag::NEO2_EBENE3,
+        KeyCode::BACKSLASH
       </autogen>
       <autogen>
-        --KeyToKey-- KeyCode::X, ModifierFlag::NEO2_EBENE3, KeyCode::KEY_4, ModifierFlag::SHIFT_R
+        __KeyToKey__ KeyCode::X, ModifierFlag::NEO2_EBENE3,
+        KeyCode::KEY_4, ModifierFlag::SHIFT_R
       </autogen>
       <autogen>
-        --KeyToKey-- KeyCode::C, ModifierFlag::NEO2_EBENE3, KeyCode::KEY_7, ModifierFlag::OPTION_R
+        __KeyToKey__ KeyCode::C, ModifierFlag::NEO2_EBENE3,
+        KeyCode::KEY_7, ModifierFlag::OPTION_R
       </autogen>
       <autogen>
-        --KeyToKey-- KeyCode::V, ModifierFlag::NEO2_EBENE3, KeyCode::N, ModifierFlag::OPTION_R | ModifierFlag::CONTROL_R
+        __KeyToKey__ KeyCode::V, ModifierFlag::NEO2_EBENE3,
+        KeyCode::N, ModifierFlag::OPTION_R | ModifierFlag::CONTROL_R
       </autogen>
       <autogen>
-        --KeyToKey-- KeyCode::B, ModifierFlag::NEO2_EBENE3, KeyCode::EQUAL, ModifierFlag::SHIFT_R, KeyCode::SPACE
+        __KeyToKey__ KeyCode::B, ModifierFlag::NEO2_EBENE3,
+        KeyCode::EQUAL, ModifierFlag::SHIFT_R, KeyCode::SPACE
       </autogen>
       <autogen>
-        --KeyToKey-- KeyCode::N, ModifierFlag::NEO2_EBENE3, KeyCode::BRACKET_RIGHT
+        __KeyToKey__ KeyCode::N, ModifierFlag::NEO2_EBENE3,
+        KeyCode::BRACKET_RIGHT
       </autogen>
       <autogen>
-        --KeyToKey-- KeyCode::M, ModifierFlag::NEO2_EBENE3, KeyCode::KEY_5, ModifierFlag::SHIFT_R
+        __KeyToKey__ KeyCode::M, ModifierFlag::NEO2_EBENE3,
+        KeyCode::KEY_5, ModifierFlag::SHIFT_R
       </autogen>
       <autogen>
-        --KeyToKey-- KeyCode::COMMA, ModifierFlag::NEO2_EBENE3, KeyCode::KEY_2, ModifierFlag::SHIFT_R
+        __KeyToKey__ KeyCode::COMMA, ModifierFlag::NEO2_EBENE3,
+        KeyCode::KEY_2, ModifierFlag::SHIFT_R
       </autogen>
       <autogen>
-        --KeyToKey-- KeyCode::DOT, ModifierFlag::NEO2_EBENE3, KeyCode::BACKSLASH, ModifierFlag::SHIFT_R
+        __KeyToKey__ KeyCode::DOT, ModifierFlag::NEO2_EBENE3,
+        KeyCode::BACKSLASH, ModifierFlag::SHIFT_R
       </autogen>
       <autogen>
-        --KeyToKey-- KeyCode::SLASH, ModifierFlag::NEO2_EBENE3, KeyCode::COMMA, ModifierFlag::SHIFT_R
+        __KeyToKey__ KeyCode::SLASH, ModifierFlag::NEO2_EBENE3,
+        KeyCode::COMMA, ModifierFlag::SHIFT_R
       </autogen>
 
       <!-- Ebene 4 - Nur Test -->
       <!-- Top Row -->
       <autogen>
-        --KeyToKey--, KeyCode::Q, ModifierFlag::NEO2_EBENE4, KeyCode::PAGEUP
+        __KeyToKey__, KeyCode::Q, ModifierFlag::NEO2_EBENE4,
+        KeyCode::PAGEUP
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::W, ModifierFlag::NEO2_EBENE4, KeyCode::DELETE
+        __KeyToKey__, KeyCode::W, ModifierFlag::NEO2_EBENE4,
+        KeyCode::DELETE
       </autogen>
       <autogen>
-        __KeyToKey__ KeyCode::E, ModifierFlag::NEO2_EBENE4, KeyCode::CURSOR_UP,
+        __KeyToKey__ KeyCode::E, ModifierFlag::NEO2_EBENE4,
+        KeyCode::CURSOR_UP,
       </autogen>
       <!--autogen>
         __DoublePressModifier__
@@ -242,32 +281,41 @@
         KeyCode::CURSOR_UP
       </autogen-->
       <autogen>
-        --KeyToKey--, KeyCode::R, ModifierFlag::NEO2_EBENE4, KeyCode::FORWARD_DELETE
+        __KeyToKey__, KeyCode::R, ModifierFlag::NEO2_EBENE4,
+        KeyCode::FORWARD_DELETE
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::T, ModifierFlag::NEO2_EBENE4, KeyCode::PAGEDOWN
+        __KeyToKey__, KeyCode::T, ModifierFlag::NEO2_EBENE4,
+        KeyCode::PAGEDOWN
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::Y, ModifierFlag::NEO2_EBENE4, KeyCode::KEY_1, ModifierFlag::OPTION_L
+        __KeyToKey__, KeyCode::Y, ModifierFlag::NEO2_EBENE4,
+        KeyCode::KEY_1, ModifierFlag::OPTION_L
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::U, ModifierFlag::NEO2_EBENE4, KeyCode::KEY_7
+        __KeyToKey__, KeyCode::U, ModifierFlag::NEO2_EBENE4,
+        KeyCode::KEY_7
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::I, ModifierFlag::NEO2_EBENE4, KeyCode::KEY_8
+        __KeyToKey__, KeyCode::I, ModifierFlag::NEO2_EBENE4,
+        KeyCode::KEY_8
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::O, ModifierFlag::NEO2_EBENE4, KeyCode::KEY_9
+        __KeyToKey__, KeyCode::O, ModifierFlag::NEO2_EBENE4,
+        KeyCode::KEY_9
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::P, ModifierFlag::NEO2_EBENE4, KeyCode::BRACKET_RIGHT
+        __KeyToKey__, KeyCode::P, ModifierFlag::NEO2_EBENE4,
+        KeyCode::BRACKET_RIGHT
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::BRACKET_LEFT, ModifierFlag::NEO2_EBENE4, KeyCode::SLASH
+        __KeyToKey__, KeyCode::BRACKET_LEFT, ModifierFlag::NEO2_EBENE4,
+        KeyCode::SLASH
       </autogen>
       <!-- Home Row -->
       <autogen>
-        --KeyToKey--, KeyCode::A, ModifierFlag::NEO2_EBENE4, KeyCode::HOME
+        __KeyToKey__, KeyCode::A, ModifierFlag::NEO2_EBENE4,
+        KeyCode::HOME
       </autogen>
       <!--autogen>
         __DoublePressModifier__
@@ -276,13 +324,17 @@
         KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L
       </autogen-->
       <autogen>
-        __KeyToKey__ KeyCode::S, ModifierFlag::NEO2_EBENE4, KeyCode::CURSOR_LEFT
+        __KeyToKey__ KeyCode::S, ModifierFlag::NEO2_EBENE4,
+        KeyCode::CURSOR_LEFT
       </autogen>
       <autogen>
-        __SimultaneousKeyPresses__ KeyCode::S, KeyCode::D, ModifierFlag::NEO2_EBENE4, KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L
+        __SimultaneousKeyPresses__
+        KeyCode::S, KeyCode::D, ModifierFlag::NEO2_EBENE4,
+        KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L
       </autogen>
       <autogen>
-        __KeyToKey__ KeyCode::D, ModifierFlag::NEO2_EBENE4, KeyCode::CURSOR_DOWN
+        __KeyToKey__ KeyCode::D, ModifierFlag::NEO2_EBENE4,
+        KeyCode::CURSOR_DOWN
       </autogen>
       <!--autogen>
         __DoublePressModifier__
@@ -308,207 +360,252 @@
         KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L
       </autogen-->
       <autogen>
-        --KeyToKey--, KeyCode::F, ModifierFlag::NEO2_EBENE4, KeyCode::CURSOR_RIGHT
+        __KeyToKey__, KeyCode::F, ModifierFlag::NEO2_EBENE4,
+        KeyCode::CURSOR_RIGHT
       </autogen>
       <autogen>
-        __SimultaneousKeyPresses__ KeyCode::F, KeyCode::D, ModifierFlag::NEO2_EBENE4, KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L
+        __SimultaneousKeyPresses__
+        KeyCode::F, KeyCode::D, ModifierFlag::NEO2_EBENE4,
+        KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::G, ModifierFlag::NEO2_EBENE4, KeyCode::END
+        __KeyToKey__, KeyCode::G, ModifierFlag::NEO2_EBENE4,
+        KeyCode::END
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::H, ModifierFlag::NEO2_EBENE4, KeyCode::MINUS, ModifierFlag::OPTION_L
+        __KeyToKey__, KeyCode::H, ModifierFlag::NEO2_EBENE4,
+        KeyCode::MINUS, ModifierFlag::OPTION_L
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::J, ModifierFlag::NEO2_EBENE4, KeyCode::KEY_4
+        __KeyToKey__, KeyCode::J, ModifierFlag::NEO2_EBENE4,
+        KeyCode::KEY_4
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::K, ModifierFlag::NEO2_EBENE4, KeyCode::KEY_5
+        __KeyToKey__, KeyCode::K, ModifierFlag::NEO2_EBENE4,
+        KeyCode::KEY_5
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::L, ModifierFlag::NEO2_EBENE4, KeyCode::KEY_6
+        __KeyToKey__, KeyCode::L, ModifierFlag::NEO2_EBENE4,
+        KeyCode::KEY_6
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::SEMICOLON, ModifierFlag::NEO2_EBENE4, KeyCode::COMMA
+        __KeyToKey__, KeyCode::SEMICOLON, ModifierFlag::NEO2_EBENE4,
+        KeyCode::COMMA
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::QUOTE, ModifierFlag::NEO2_EBENE4, KeyCode::DOT
+        __KeyToKey__, KeyCode::QUOTE, ModifierFlag::NEO2_EBENE4,
+        KeyCode::DOT
       </autogen>
 
       <autogen>
-        --KeyToKey--, KeyCode::Z, ModifierFlag::NEO2_EBENE4, KeyCode::ESCAPE
+        __KeyToKey__, KeyCode::Z, ModifierFlag::NEO2_EBENE4,
+        KeyCode::ESCAPE
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::X, ModifierFlag::NEO2_EBENE4, KeyCode::TAB
+        __KeyToKey__, KeyCode::X, ModifierFlag::NEO2_EBENE4,
+        KeyCode::TAB
       </autogen>
-
       <!--autogen>
-        --KeyToKey--, KeyCode::C, ModifierFlag::NEO2_EBENE4, KeyCode::INSERT
+        __KeyToKey__, KeyCode::C, ModifierFlag::NEO2_EBENE4,
+        KeyCode::INSERT
       </autogen-->
-
       <autogen>
-        --KeyToKey--, KeyCode::V, ModifierFlag::NEO2_EBENE4, KeyCode::RETURN
+        __KeyToKey__, KeyCode::V, ModifierFlag::NEO2_EBENE4,
+        KeyCode::RETURN
       </autogen>
-
-      <!-- 0 -->
-      <autogen>
-        --KeyToKey--, KeyCode::SPACE, ModifierFlag::NEO2_EBENE4, KeyCode::KEY_0
+      <autogen> <!-- 0 -->
+        __KeyToKey__, KeyCode::SPACE, ModifierFlag::NEO2_EBENE4,
+        KeyCode::KEY_0
       </autogen>
-      <!-- 1 -->
-      <autogen>
-        --KeyToKey--, KeyCode::M, ModifierFlag::NEO2_EBENE4, KeyCode::KEY_1
+      <autogen> <!-- 1 -->
+        __KeyToKey__, KeyCode::M, ModifierFlag::NEO2_EBENE4,
+        KeyCode::KEY_1
       </autogen>
-      <!-- 2 -->
-      <autogen>
-        --KeyToKey--, KeyCode::COMMA, ModifierFlag::NEO2_EBENE4, KeyCode::KEY_2
+      <autogen> <!-- 2 -->
+        __KeyToKey__, KeyCode::COMMA, ModifierFlag::NEO2_EBENE4,
+        KeyCode::KEY_2
       </autogen>
-      <!-- 3 -->
-      <autogen>
-        --KeyToKey--, KeyCode::DOT, ModifierFlag::NEO2_EBENE4, KeyCode::KEY_3
+      <autogen> <!-- 3 -->
+        __KeyToKey__, KeyCode::DOT, ModifierFlag::NEO2_EBENE4,
+        KeyCode::KEY_3
       </autogen>
 
       <!-- Ebene 5 - Nur Test (Benötigt Greek Input Method)-->
       <autogen>
-        --KeyToKey--, KeyCode::M, ModifierFlag::NEO2_EBENE5, KeyCode::M, ModifierFlag::OPTION_R
+        __KeyToKey__, KeyCode::M, ModifierFlag::NEO2_EBENE5,
+        KeyCode::M, ModifierFlag::OPTION_R
       </autogen>
 
       <autogen>
-        --KeyToKey--, KeyCode::S, ModifierFlag::NEO2_EBENE5, KeyCode::VK_CHANGE_INPUTSOURCE_GREEK, KeyCode::VK_WAIT_10MS, KeyCode::VK_WAIT_10MS, KeyCode::VK_WAIT_10MS, KeyCode::I, KeyCode::VK_CHANGE_INPUTSOURCE_GERMAN
+        __KeyToKey__, KeyCode::S, ModifierFlag::NEO2_EBENE5,
+        KeyCode::VK_CHANGE_INPUTSOURCE_GREEK,
+        KeyCode::VK_WAIT_10MS, KeyCode::VK_WAIT_10MS, KeyCode::VK_WAIT_10MS,
+        KeyCode::I,
+        KeyCode::VK_CHANGE_INPUTSOURCE_GERMAN
       </autogen>
 
       <autogen>
-        --KeyToKey--, KeyCode::D, ModifierFlag::NEO2_EBENE5, KeyCode::VK_CHANGE_INPUTSOURCE_GREEK, KeyCode::VK_WAIT_10MS, KeyCode::VK_WAIT_10MS, KeyCode::VK_WAIT_10MS, KeyCode::D, KeyCode::VK_CHANGE_INPUTSOURCE_GERMAN
+        __KeyToKey__, KeyCode::D, ModifierFlag::NEO2_EBENE5,
+        KeyCode::VK_CHANGE_INPUTSOURCE_GREEK,
+        KeyCode::VK_WAIT_10MS, KeyCode::VK_WAIT_10MS, KeyCode::VK_WAIT_10MS,
+        KeyCode::D,
+        KeyCode::VK_CHANGE_INPUTSOURCE_GERMAN
       </autogen>
 
       <autogen>
-        --KeyToKey--, KeyCode::F, ModifierFlag::NEO2_EBENE5, KeyCode::VK_CHANGE_INPUTSOURCE_GREEK, KeyCode::VK_WAIT_10MS, KeyCode::VK_WAIT_10MS, KeyCode::VK_WAIT_10MS, KeyCode::E, KeyCode::VK_CHANGE_INPUTSOURCE_GERMAN
+        __KeyToKey__, KeyCode::F, ModifierFlag::NEO2_EBENE5,
+        KeyCode::VK_CHANGE_INPUTSOURCE_GREEK,
+        KeyCode::VK_WAIT_10MS, KeyCode::VK_WAIT_10MS, KeyCode::VK_WAIT_10MS,
+        KeyCode::E,
+        KeyCode::VK_CHANGE_INPUTSOURCE_GERMAN
       </autogen>
 
       <!-- Ebene 6 - Nur Test -->
-
       <autogen>
-        --KeyToKey--, KeyCode::W, ModifierFlag::NEO2_EBENE6, KeyCode::V, ModifierFlag::OPTION_R
+        __KeyToKey__, KeyCode::W, ModifierFlag::NEO2_EBENE6, KeyCode::V, ModifierFlag::OPTION_R
       </autogen>
 
-      <!--
-            <autogen>
-                --KeyToKey--
-                KeyCode::KEY_7,
-                MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
-                KeyCode::E,
-                ModifierFlag::OPTION_R
-            </autogen-->
+      <!-- Ebene 1 (und 2) ->
 
       <!-- Number Row -->
-
       <autogen>
-        --KeyToKey--, KeyCode::MINUS, KeyCode::SLASH
+        __KeyToKey__, KeyCode::MINUS,
+        KeyCode::SLASH
       </autogen>
-
       <autogen>
-        --KeyToKey--, KeyCode::EQUAL, KeyCode::EQUAL, ModifierFlag::SHIFT_R
+        __KeyToKey__, KeyCode::EQUAL,
+        KeyCode::EQUAL, ModifierFlag::SHIFT_R
       </autogen>
 
       <!-- TOP ROW -->
       <autogen>
-        --KeyToKey--, KeyCode::Q, KeyCode::X
+        __KeyToKey__, KeyCode::Q,
+        KeyCode::X
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::W, KeyCode::V
+        __KeyToKey__, KeyCode::W,
+        KeyCode::V
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::E, KeyCode::L
+        __KeyToKey__, KeyCode::E,
+        KeyCode::L
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::R, KeyCode::C
+        __KeyToKey__, KeyCode::R,
+        KeyCode::C
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::T, KeyCode::W
+        __KeyToKey__, KeyCode::T,
+        KeyCode::W
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::Y, KeyCode::K
+        __KeyToKey__, KeyCode::Y,
+        KeyCode::K
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::U, KeyCode::H
+        __KeyToKey__, KeyCode::U,
+        KeyCode::H
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::I, KeyCode::G
+        __KeyToKey__, KeyCode::I,
+        KeyCode::G
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::O, KeyCode::F
+        __KeyToKey__, KeyCode::O,
+        KeyCode::F
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::P, KeyCode::Q
+        __KeyToKey__, KeyCode::P,
+        KeyCode::Q
       </autogen>
-      <autogen>
-        <!-- ß -->
-        --KeyToKey--, KeyCode::BRACKET_LEFT, KeyCode::MINUS
+      <autogen> <!-- ß -->
+        __KeyToKey__, KeyCode::BRACKET_LEFT,
+        KeyCode::MINUS
       </autogen>
-      <autogen>
-        <!-- ´ -->
-        --KeyToKey--, KeyCode::BRACKET_RIGHT, KeyCode::EQUAL
+      <autogen> <!-- ´ -->
+        __KeyToKey__, KeyCode::BRACKET_RIGHT,
+        KeyCode::EQUAL
       </autogen>
 
       <!-- HOME ROW -->
       <autogen>
-        --KeyToKey--, KeyCode::A, KeyCode::U
+        __KeyToKey__, KeyCode::A,
+        KeyCode::U
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::S, KeyCode::I
+        __KeyToKey__, KeyCode::S,
+        KeyCode::I
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::D, KeyCode::A
+        __KeyToKey__, KeyCode::D,
+        KeyCode::A
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::F, KeyCode::E
+        __KeyToKey__, KeyCode::F,
+        KeyCode::E
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::G, KeyCode::O
+        __KeyToKey__, KeyCode::G,
+        KeyCode::O
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::H, KeyCode::S
+        __KeyToKey__, KeyCode::H,
+        KeyCode::S
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::J, KeyCode::N
+        __KeyToKey__, KeyCode::J,
+        KeyCode::N
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::K, KeyCode::R
+        __KeyToKey__, KeyCode::K,
+        KeyCode::R
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::L, KeyCode::T
+        __KeyToKey__, KeyCode::L,
+        KeyCode::T
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::SEMICOLON, KeyCode::D
+        __KeyToKey__, KeyCode::SEMICOLON,
+        KeyCode::D
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::QUOTE, KeyCode::Z
+        __KeyToKey__, KeyCode::QUOTE,
+        KeyCode::Z
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::U, KeyCode::H
+        __KeyToKey__, KeyCode::U,
+        KeyCode::H
       </autogen>
 
       <!-- Bottom Row -->
       <autogen>
-        --KeyToKey--, KeyCode::Z, KeyCode::BRACKET_LEFT
+        __KeyToKey__, KeyCode::Z,
+        KeyCode::BRACKET_LEFT
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::X, KeyCode::SEMICOLON
+        __KeyToKey__, KeyCode::X,
+        KeyCode::SEMICOLON
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::C, KeyCode::QUOTE
+        __KeyToKey__, KeyCode::C,
+        KeyCode::QUOTE
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::V, KeyCode::P
+        __KeyToKey__, KeyCode::V,
+        KeyCode::P
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::B, KeyCode::Y
+        __KeyToKey__, KeyCode::B,
+        KeyCode::Y
       </autogen>
       <autogen>
-        --KeyToKey--, KeyCode::N, KeyCode::B
+        __KeyToKey__, KeyCode::N,
+        KeyCode::B
       </autogen>
       <!-- m,. brauchen kein remap -->
       <autogen>
-        --KeyToKey--, KeyCode::SLASH, KeyCode::J
+        __KeyToKey__, KeyCode::SLASH,
+        KeyCode::J
       </autogen>
 
     </block>
@@ -516,17 +613,6 @@
   </item>
   <item hidden="true">
     <identifier vk_config="true">notsave.oderwat.neo2_off</identifier>
-    <identifier vk_config="true">notsave.oderwat.neo2_skip</identifier>
     <autogen>__ShowStatusMessage__ NEO2</autogen>
   </item>
-  <!--item>
-   <name>Activate Neo 2 by Space</name>
-   <identifier>oderwat.neo2</identifier>
-   <autogen>
-     --KeyOverlaidModifier--
-     KeyCode::SPACE,
-     KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_oderwat_neo2,
-     KeyCode::SPACE
-   </autogen>
-</item-->
 </root>
