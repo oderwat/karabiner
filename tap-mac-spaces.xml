@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Tap Mac Spaces</name>
+    <identifier>oderwat.tap_mac_spaces</identifier>
+    <appendix>Tap R-CTRL und R-ALT wird zu L-CTRL+L-ALT+L-CMD Cursor links und rechts.</appendix>
+
+    <!-- Hier mache ich rechte CTRL und rechte ALT Taste beim Antippen zu Spaces Wechslern -->
+    <autogen>
+      --KeyOverlaidModifier-- KeyCode::CONTROL_R, ModifierFlag::CONTROL_R, KeyCode::CONTROL_R, KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L | ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L
+    </autogen>
+
+    <autogen>
+      --KeyOverlaidModifier-- KeyCode::OPTION_R, ModifierFlag::OPTION_R, KeyCode::OPTION_R, KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L | ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L
+    </autogen>
+  </item>
+</root>

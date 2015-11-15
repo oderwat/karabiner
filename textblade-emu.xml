@@ -1,0 +1,343 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>TextBlade mappings</name>
+
+    <modifierdef>TB_EDIT</modifierdef>
+    <modifierdef>TB_PAGING</modifierdef>
+    <modifierdef>TB_PAGING_SELECT</modifierdef>
+    <modifierdef>TB_SELECT</modifierdef>
+    <modifierdef>TB_GREEN</modifierdef>
+    <modifierdef>TB_GREENSHIFT</modifierdef>
+    <item>
+      <name>Edit and Select modes</name>
+      <appendix>There's also a COMMAND mode which enables pgup/down/home/end/tabbing/desktop switch by holding down Left Command, and EDIT/SELECT+P will tab/untab</appendix>
+      <identifier>textblade</identifier>
+      <autogen>__SimultaneousKeyPresses__ KeyCode::D, KeyCode::F, KeyCode::VK_MODIFIER_TB_EDIT</autogen>
+      <autogen>__KeyToKey__ KeyCode::S, ModifierFlag::TB_EDIT, KeyCode::VK_MODIFIER_TB_SELECT
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::COMMAND_L, ModifierFlag::TB_EDIT, KeyCode::VK_MODIFIER_TB_PAGING
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::S, ModifierFlag::TB_PAGING, KeyCode::VK_MODIFIER_TB_PAGING_SELECT
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::SHIFT_L, ModifierFlag::TB_GREEN, KeyCode::VK_MODIFIER_TB_GREENSHIFT
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::SHIFT_R, ModifierFlag::TB_GREEN, KeyCode::VK_MODIFIER_TB_GREENSHIFT
+      </autogen>
+
+      <!-- home row cursor -->
+      <autogen>__KeyToKey__ KeyCode::J, ModifierFlag::TB_EDIT, KeyCode::CURSOR_LEFT
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::I, ModifierFlag::TB_EDIT, KeyCode::CURSOR_UP
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::K, ModifierFlag::TB_EDIT, KeyCode::CURSOR_DOWN
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::COMMA, ModifierFlag::TB_EDIT, KeyCode::CURSOR_DOWN
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::L, ModifierFlag::TB_EDIT, KeyCode::CURSOR_RIGHT
+      </autogen>
+      <!-- home row pageup/down home/end -->
+      <autogen>__KeyToKey__ KeyCode::J, ModifierFlag::TB_PAGING, KeyCode::CURSOR_UP, ModifierFlag::COMMAND_L
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::I, ModifierFlag::TB_PAGING, KeyCode::PAGEUP
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::K, ModifierFlag::TB_PAGING, KeyCode::PAGEDOWN
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::COMMA, ModifierFlag::TB_PAGING, KeyCode::PAGEDOWN
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::L, ModifierFlag::TB_PAGING, KeyCode::CURSOR_DOWN, ModifierFlag::COMMAND_L
+      </autogen>
+      <!-- next word/line -->
+      <autogen>__KeyToKey__ KeyCode::U, ModifierFlag::TB_EDIT, KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::O, ModifierFlag::TB_EDIT, KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::M, ModifierFlag::TB_EDIT, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::DOT, ModifierFlag::TB_EDIT, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L
+      </autogen>
+      <!-- undo/redo -->
+      <autogen>__KeyToKey__ KeyCode::SEMICOLON, ModifierFlag::TB_EDIT, KeyCode::Z, ModifierFlag::COMMAND_L
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::SLASH, ModifierFlag::TB_EDIT, KeyCode::Z, ModifierFlag::COMMAND_L, ModifierFlag::SHIFT_L
+      </autogen>
+      <!-- undo/redo while selecting -->
+      <autogen>__KeyToKey__ KeyCode::SEMICOLON, ModifierFlag::TB_SELECT, KeyCode::Z, ModifierFlag::COMMAND_L
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::SLASH, ModifierFlag::TB_SELECT, KeyCode::Z, ModifierFlag::COMMAND_L, ModifierFlag::SHIFT_L
+      </autogen>
+      <!-- cut/copy/paste -->
+      <autogen>__KeyToKey__ KeyCode::Y, ModifierFlag::TB_EDIT, KeyCode::X, ModifierFlag::COMMAND_L
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::H, ModifierFlag::TB_EDIT, KeyCode::C, ModifierFlag::COMMAND_L
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::N, ModifierFlag::TB_EDIT, KeyCode::V, ModifierFlag::COMMAND_L
+      </autogen>
+      <!-- cut/copy/paste while selecting -->
+      <autogen>__KeyToKey__ KeyCode::Y, ModifierFlag::TB_SELECT, KeyCode::X, ModifierFlag::COMMAND_L
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::H, ModifierFlag::TB_SELECT, KeyCode::C, ModifierFlag::COMMAND_L
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::N, ModifierFlag::TB_SELECT, KeyCode::V, ModifierFlag::COMMAND_L
+      </autogen>
+
+      <!-- Escape key lives on green tab -->
+      <autogen>__KeyToKey__ KeyCode::TAB, ModifierFlag::TB_GREEN, KeyCode::ESCAPE</autogen>
+
+      <!-- bs/del in edit mode -->
+      <autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, ModifierFlag::TB_EDIT, KeyCode::DELETE
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, ModifierFlag::TB_GREEN, KeyCode::FORWARD_DELETE
+      </autogen>
+
+      <!-- tab/untab in edit mode, probably not textblade default -->
+      <autogen>__KeyToKey__ KeyCode::P, ModifierFlag::TB_EDIT, KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::P, ModifierFlag::TB_SELECT, KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L
+      </autogen>
+
+      <!-- Tabs, screens -->
+      <autogen>__KeyToKey__ KeyCode::U, ModifierFlag::TB_PAGING, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::O, ModifierFlag::TB_PAGING, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::U, ModifierFlag::TB_PAGING_SELECT, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L, ModifierFlag::SHIFT_L
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::O, ModifierFlag::TB_PAGING_SELECT, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L, ModifierFlag::SHIFT_L
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::M, ModifierFlag::TB_PAGING, KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::DOT, ModifierFlag::TB_PAGING, KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L
+      </autogen>
+
+      <!-- select cursors, word/line -->
+      <autogen>__KeyToKey__ KeyCode::J, ModifierFlag::TB_SELECT, KeyCode::CURSOR_LEFT, ModifierFlag::SHIFT_L
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::I, ModifierFlag::TB_SELECT, KeyCode::CURSOR_UP, ModifierFlag::SHIFT_L
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::K, ModifierFlag::TB_SELECT, KeyCode::CURSOR_DOWN, ModifierFlag::SHIFT_L
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::COMMA, ModifierFlag::TB_SELECT, KeyCode::CURSOR_DOWN, ModifierFlag::SHIFT_L
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::L, ModifierFlag::TB_SELECT, KeyCode::CURSOR_RIGHT, ModifierFlag::SHIFT_L
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::L, ModifierFlag::TB_SELECT, KeyCode::CURSOR_RIGHT, ModifierFlag::SHIFT_L
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::U, ModifierFlag::TB_SELECT, KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L, ModifierFlag::SHIFT_L
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::O, ModifierFlag::TB_SELECT, KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L, ModifierFlag::SHIFT_L
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::M, ModifierFlag::TB_SELECT, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L, ModifierFlag::SHIFT_L
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::DOT, ModifierFlag::TB_SELECT, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L, ModifierFlag::SHIFT_L
+      </autogen>
+
+      <!-- green layer symbols -->
+      <autogen>__KeyToKey__ KeyCode::Q, ModifierFlag::TB_GREEN, KeyCode::KEY_1</autogen>
+      <autogen>__KeyToKey__ KeyCode::W, ModifierFlag::TB_GREEN, KeyCode::KEY_2</autogen>
+      <autogen>__KeyToKey__ KeyCode::E, ModifierFlag::TB_GREEN, KeyCode::KEY_3</autogen>
+      <autogen>__KeyToKey__ KeyCode::R, ModifierFlag::TB_GREEN, KeyCode::KEY_4</autogen>
+      <autogen>__KeyToKey__ KeyCode::T, ModifierFlag::TB_GREEN, KeyCode::KEY_5</autogen>
+      <autogen>__KeyToKey__ KeyCode::Y, ModifierFlag::TB_GREEN, KeyCode::KEY_6</autogen>
+      <autogen>__KeyToKey__ KeyCode::U, ModifierFlag::TB_GREEN, KeyCode::KEY_7</autogen>
+      <autogen>__KeyToKey__ KeyCode::I, ModifierFlag::TB_GREEN, KeyCode::KEY_8</autogen>
+      <autogen>__KeyToKey__ KeyCode::O, ModifierFlag::TB_GREEN, KeyCode::KEY_9</autogen>
+      <autogen>__KeyToKey__ KeyCode::P, ModifierFlag::TB_GREEN, KeyCode::KEY_0</autogen>
+      <autogen>__KeyToKey__ KeyCode::A, ModifierFlag::TB_GREEN, KeyCode::KEY_1, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::S, ModifierFlag::TB_GREEN, KeyCode::KEY_2, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::D, ModifierFlag::TB_GREEN, KeyCode::KEY_3, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::F, ModifierFlag::TB_GREEN, KeyCode::KEY_4, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::G, ModifierFlag::TB_GREEN, KeyCode::KEY_5, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::H, ModifierFlag::TB_GREEN, KeyCode::KEY_6, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::J, ModifierFlag::TB_GREEN, KeyCode::KEY_7, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::K, ModifierFlag::TB_GREEN, KeyCode::KEY_8, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::L, ModifierFlag::TB_GREEN, KeyCode::KEY_9, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::SEMICOLON, ModifierFlag::TB_GREEN, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::Z, ModifierFlag::TB_GREEN, KeyCode::EQUAL, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::X, ModifierFlag::TB_GREEN, KeyCode::MINUS</autogen>
+      <autogen>__KeyToKey__ KeyCode::C, ModifierFlag::TB_GREEN, KeyCode::EQUAL</autogen>
+      <autogen>__KeyToKey__ KeyCode::V, ModifierFlag::TB_GREEN, KeyCode::BRACKET_LEFT, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::B, ModifierFlag::TB_GREEN, KeyCode::BRACKET_RIGHT, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::N, ModifierFlag::TB_GREEN, KeyCode::BRACKET_LEFT</autogen>
+      <autogen>__KeyToKey__ KeyCode::M, ModifierFlag::TB_GREEN, KeyCode::BRACKET_RIGHT</autogen>
+      <autogen>__KeyToKey__ KeyCode::COMMA, ModifierFlag::TB_GREEN, KeyCode::SEMICOLON</autogen>
+      <autogen>__KeyToKey__ KeyCode::DOT, ModifierFlag::TB_GREEN, KeyCode::SEMICOLON, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::SLASH, ModifierFlag::TB_GREEN, KeyCode::BACKSLASH</autogen>
+      <!-- green layer specials" ~ ` _ | -->
+      <autogen>__KeyToKey__ KeyCode::S, ModifierFlag::TB_GREENSHIFT, KeyCode::BACKQUOTE, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::D, ModifierFlag::TB_GREENSHIFT, KeyCode::BACKQUOTE</autogen>
+      <autogen>__KeyToKey__ KeyCode::X, ModifierFlag::TB_GREENSHIFT, KeyCode::MINUS, ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::C, ModifierFlag::TB_GREENSHIFT, KeyCode::BACKSLASH, ModifierFlag::SHIFT_L</autogen>
+    </item>
+
+    <item>
+      <name>Activate Green Layer by spacebar</name>
+      <appendix>Holding down spacebar and typing on the 3 rows covered by TextBlade will insert symbols.</appendix>
+      <identifier>textblade-green-spacebar</identifier>
+      <autogen>__KeyOverlaidModifier__ KeyCode::SPACE, KeyCode::VK_MODIFIER_TB_GREEN, KeyCode::SPACE
+      </autogen>
+      <!-- Only fire when releasing the spacebar after releasing another key -->
+      <block>
+        <modifier_only>ModifierFlag::TB_GREEN</modifier_only>
+        <autogen>__BlockUntilKeyUp__ KeyCode::SPACE</autogen>
+      </block>
+    </item>
+
+    <item>
+      <name>Activate Green Layer by right-command</name>
+      <appendix>Holding down right command and typing on the 3 rows covered by TextBlade will insert symbols.</appendix>
+      <appendix>You will have to use the left command key for OS X key commands</appendix>
+      <identifier>textblade-green-command</identifier>
+
+      <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::VK_MODIFIER_TB_GREEN</autogen>
+    </item>
+
+    <item>
+      <name>Right Pinkie Danger</name>
+      <appendix>On the TextBlade the right pinkie gets backspace and return much closer.</appendix>
+      <appendix>Enable this to get the same. Semicolon and colon are comma and dot on the green layer.</appendix>
+      <identifier>textblade-danger</identifier>
+      <autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, KeyCode::DELETE</autogen>
+      <autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, ModifierFlag::TB_SELECT, KeyCode::FORWARD_DELETE
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, ModifierFlag::TB_GREEN, KeyCode::FORWARD_DELETE
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::SEMICOLON, KeyCode::QUOTE</autogen>
+      <autogen>__KeyToKey__ KeyCode::QUOTE, KeyCode::RETURN</autogen>
+    </item>
+    <item>
+      <name>Right Pinkie All The Way</name>
+      <appendix>Map all the top-right keys to backspace, since delete is much easier to find by touch on the TextBlade</appendix>
+      <identifier>textblade-danger-continued</identifier>
+      <autogen>__KeyToKey__ KeyCode::BRACKET_RIGHT, KeyCode::DELETE</autogen>
+      <autogen>__KeyToKey__ KeyCode::BACKSLASH, KeyCode::DELETE</autogen>
+      <autogen>__KeyToKey__ KeyCode::BRACKET_RIGHT, ModifierFlag::TB_SELECT, KeyCode::FORWARD_DELETE
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::BACKSLASH, ModifierFlag::TB_SELECT, KeyCode::FORWARD_DELETE
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::DELETE, ModifierFlag::TB_SELECT, KeyCode::FORWARD_DELETE
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::BRACKET_RIGHT, ModifierFlag::TB_GREEN, KeyCode::FORWARD_DELETE
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::BACKSLASH, ModifierFlag::TB_GREEN, KeyCode::FORWARD_DELETE
+      </autogen>
+      <autogen>__KeyToKey__ KeyCode::DELETE, ModifierFlag::TB_GREEN, KeyCode::FORWARD_DELETE
+      </autogen>
+    </item>
+
+    <item>
+      <!-- from https://github.com/tekezo/Karabiner/blob/version_10.6.0/src/core/server/Resources/include/checkbox/standards/shift.xml -->
+      <name>Shift_L to Shift_L</name>
+      <appendix>(+ When you type Shift_L only, Sticky Shift_L)</appendix>
+      <appendix>(+ When you type Shift_L twice, Capslock)</appendix>
+      <identifier>tb.remap.shiftl_to_sticky_shiftl</identifier>
+
+      <modifierdef notify="false">EXTRA3</modifierdef>
+
+      <autogen>
+        __KeyOverlaidModifier__
+        <!-- from -->
+        KeyCode::SHIFT_L, ModifierFlag::EXTRA3,
+        <!-- to -->
+        KeyCode::SHIFT_L,
+        <!-- overlaid -->
+        KeyCode::CAPSLOCK, KeyCode::VK_STICKY_SHIFT_L_FORCE_OFF, KeyCode::VK_STICKY_EXTRA3_FORCE_OFF, KeyCode::VK_CONFIG_TOGGLE_notsave_shiftl_capslocktrick,
+      </autogen>
+      <autogen>
+        __KeyOverlaidModifier__
+        <!-- from -->
+        KeyCode::SHIFT_L,
+        <!-- to -->
+        KeyCode::SHIFT_L,
+        <!-- overlaid -->
+        KeyCode::VK_STICKY_SHIFT_L, KeyCode::VK_STICKY_EXTRA3,
+      </autogen>
+    </item>
+    <item>
+      <name>Mouse Keys</name>
+      <appendix>You can move mouse pointer by e+ikjl keys, and scroll by e+r+ikjl keys.</appendix>
+      <appendix></appendix>
+      <appendix>Usage:</appendix>
+      <appendix></appendix>
+      <appendix>Move pointer by:</appendix>
+      <appendix>
+        <![CDATA[  * Left: D down -> J down -> J up  ]]>
+      </appendix>
+      <appendix>
+        <![CDATA[  * Down: D down -> K down -> K up  ]]>
+      </appendix>
+      <appendix>
+        <![CDATA[  * Up: D down -> I down -> I up  ]]>
+      </appendix>
+      <appendix>
+        <![CDATA[  * Right: D down -> K down -> K up  ]]>
+      </appendix>
+      <appendix></appendix>
+      <appendix>The ikjl keys also act as mouse keys when you hold d+ikjl keys down.</appendix>
+      <appendix>(You can adjust timeout by "__BlockUntilKeyUp__ Timeout" in "Key Repeat" tab.</appendix>
+      <appendix></appendix>
+      <appendix>Use S key to enable scroll. ("S"croll)</appendix>
+      <appendix>* E+R+IKJL: Scroll wheel.</appendix>
+      <appendix></appendix>
+      <appendix>Use V key to increase speed.</appendix>
+      <appendix>* E+V+IKJL: High-speed movement.</appendix>
+      <appendix>* E+V+R+IKJL: High-speed scroll wheel.</appendix>
+      <appendix></appendix>
+      <appendix>Click by:</appendix>
+      <appendix>* E+Q: Left click.</appendix>
+      <appendix>* E+2: Middle click.</appendix>
+      <appendix>* E+W: Right click.</appendix>
+      <appendix></appendix>
+      <appendix>Warp cursor position:</appendix>
+      <appendix>* E+I: Move mouse cursor to the center of the frontmost app's window.</appendix>
+      <identifier>remap.tb.mouse_keys_mode_2</identifier>
+      <autogen>
+        __KeyOverlaidModifier__ KeyCode::E, ModifierFlag::NONE, @begin KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_tb_mouse_keys_mode_2, @end @begin KeyCode::E, @end
+      </autogen>
+    </item>
+    <item hidden="true">
+      <identifier vk_config="true">notsave.tb_mouse_keys_mode_2</identifier>
+
+      {{ MOUSE_KEYS_MODE_2_EXTRA }}
+
+      <autogen>
+        __BlockUntilKeyUp__ KeyCode::E
+      </autogen>
+
+      <!-- scroll -->
+      <block>
+        <modifier_only>ModifierFlag::MOUSE_KEYS_MODE_2_SCROLL</modifier_only>
+        <autogen>
+          __KeyToKey__ KeyCode::J, KeyCode::VK_MOUSEKEY_SCROLL_LEFT,
+        </autogen>
+        <autogen>
+          __KeyToKey__ KeyCode::K, KeyCode::VK_MOUSEKEY_SCROLL_UP,
+        </autogen>
+        <autogen>
+          __KeyToKey__ KeyCode::I, KeyCode::VK_MOUSEKEY_SCROLL_DOWN,
+        </autogen>
+        <autogen>
+          __KeyToKey__ KeyCode::L, KeyCode::VK_MOUSEKEY_SCROLL_RIGHT,
+        </autogen>
+      </block>
+
+      <!-- mouse move -->
+      <autogen>__KeyToKey__ KeyCode::J, KeyCode::VK_MOUSEKEY_LEFT</autogen>
+      <autogen>__KeyToKey__ KeyCode::K, KeyCode::VK_MOUSEKEY_DOWN</autogen>
+      <autogen>__KeyToKey__ KeyCode::I, KeyCode::VK_MOUSEKEY_UP</autogen>
+      <autogen>__KeyToKey__ KeyCode::L, KeyCode::VK_MOUSEKEY_RIGHT</autogen>
+
+      <!-- other -->
+      <autogen>__KeyToKey__ KeyCode::R, KeyCode::VK_MODIFIER_MOUSE_KEYS_MODE_2_SCROLL</autogen>
+      <autogen>__KeyToKey__ KeyCode::V, KeyCode::VK_MOUSEKEY_HIGHSPEED</autogen>
+
+      <!-- click -->
+      <autogen>__KeyToKey__ KeyCode::Q, PointingButton::LEFT</autogen>
+      <autogen>__KeyToKey__ KeyCode::KEY_2, PointingButton::MIDDLE</autogen>
+      <autogen>__KeyToKey__ KeyCode::W, PointingButton::RIGHT</autogen>
+
+      <!-- warp cursor position -->
+      <autogen>__KeyToKey__ KeyCode::H, KeyCode::VK_OPEN_URL_SHELL_warp_mouse_cursor_position_front_window_center</autogen>
+    </item>
+  </item>
+</root>

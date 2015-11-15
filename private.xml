@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<root>
+  <include path="tap-mac-spaces.xml"/>
+  <include path="neo2.xml"/>
+  <include path="textblade-emu.xml"/>
+</root>
